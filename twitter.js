@@ -16,13 +16,13 @@ function messageSplitting(textMess, sizeMess) {
             i++;
             next++;
         }
-        if (prev == 0 && i == len)
+        if (i == len)
         {
             count++;
         }
         else
         {
-            if (prev != 0 || textMess[i] == ' ')
+            if (prev != 0 || textMess == ' ')
             {
                 if (textMess[i] != ' ')
                 {
@@ -41,13 +41,12 @@ function messageSplitting(textMess, sizeMess) {
     return count;
 }
 
-
 let textMessage = prompt("Введите текст сообщения:"); //Текст сообщения
 let sizeMessage = prompt("Введите максимальную длину одного сообщения:"); //Максимальная длина
 
 let result = messageSplitting(textMessage, sizeMessage);
 
-if (result === -1)
+if (result == -1)
     alert("Ошибка!");
 else
     alert("Число постов = " + result);
